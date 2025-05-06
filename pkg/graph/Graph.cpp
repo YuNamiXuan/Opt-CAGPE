@@ -1,6 +1,7 @@
 #include "Graph.hpp"
 #include "./cache/Cache.hpp"
 #include "./serializer/serializer.hpp"
+#include "./SegmentTree.hpp"
 
 #include <algorithm>
 #include <cassert>
@@ -168,9 +169,6 @@ void Graph::dump_vertices()
         {
             // Create new block(s)
             v.edge_block_idx_off = edge_blocks.size() << EB_DIGITS;
-            // v.edge_block_id = edge_blocks.size();
-            // v.edge_block_offset = 0;
-
             int deg_offset = 0;
 
             while (deg_offset < v.degree)
